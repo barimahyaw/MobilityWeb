@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  mobilityweb:
+    image: ${DOCKER_REGISTRY-}mobilityweb
+    ports:
+        - "3000:80"
+        - "3001:443"
+    build:
+      context: .
+      dockerfile: MobilityWeb/Dockerfile
+
+  mobilityservice:
+    image: ${DOCKER_REGISTRY-}mobilityservice
+    ports:
+        - "7000:80"
+        - "7001:443"
+    build:
+      context: .
+      dockerfile: MobilityService/Dockerfile
+

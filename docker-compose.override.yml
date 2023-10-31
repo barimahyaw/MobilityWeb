@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  mobilityweb:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  mobilityservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
