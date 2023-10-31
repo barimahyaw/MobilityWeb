@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MobilityWeb.Models;
+namespace MobilityLibrary.Services.DTOs.Request;
 
 public class RecordRequest
 {

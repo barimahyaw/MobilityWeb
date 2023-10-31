@@ -1,6 +1,6 @@
 ﻿using MobilityLibrary.Entities;
 
-namespace MobilityLibrary;
+namespace MobilityLibrary.Repositories;
 
 public interface IRecordRepository
 {

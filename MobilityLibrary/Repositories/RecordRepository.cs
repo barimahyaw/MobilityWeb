@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MobilityLibrary.Entities;
 
-namespace MobilityLibrary;
+namespace MobilityLibrary.Repositories;
 
 public class RecordRepository : IRecordRepository
 {
@@ -32,7 +32,7 @@ public class RecordRepository : IRecordRepository
         await _context.SaveChangesAsync();
         return true;
     }
-   
+
 
     public async Task<List<Record>> ReadAllAsync() =>
         await _context.Records.ToListAsync();

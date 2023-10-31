@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MobilityLibrary.Repositories;
+using MobilityLibrary.Services;
 
 namespace MobilityLibrary;
 
@@ -21,4 +23,7 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddRecordRepository(this IServiceCollection services)
         => services.AddScoped<IRecordRepository, RecordRepository>();
+
+    public static IServiceCollection AddRecordService(this IServiceCollection services)
+        => services.AddScoped<IRecordService, RecordService>();
 }

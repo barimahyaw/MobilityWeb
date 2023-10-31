@@ -1,4 +1,5 @@
-﻿namespace MobilityWeb.Models;
+﻿namespace MobilityLibrary.Services.DTOs.Response;
+
 
 public class RecordResponse
 {
