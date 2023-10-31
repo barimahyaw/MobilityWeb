@@ -15,16 +15,6 @@ public class RecordRepository : IRecordRepository
         return record;
     }
 
-    public async Task<Record?> ReadAsync(int id) =>
-        await _context.Records.FindAsync(id);
-
-    public async Task<Record?> UpdateAsync(Record record)
-    {
-        _context.Records.Update(record);
-        await _context.SaveChangesAsync();
-        return record;
-    }
-
     public async Task<bool> DeleteAsync(int id)
     {
         var record = await _context.Records.FindAsync(id);
@@ -33,6 +23,16 @@ public class RecordRepository : IRecordRepository
         await _context.SaveChangesAsync();
         return true;
     }
+
+    public async Task<bool> DeleteAsync(string firstName)
+    {
+        var record = await _context.Records.FirstOrDefaultAsync(x => x.FirstName == firstName);
+        if (record is null) return false;
+        _context.Records.Remove(record);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+   
 
     public async Task<List<Record>> ReadAllAsync() =>
         await _context.Records.ToListAsync();
