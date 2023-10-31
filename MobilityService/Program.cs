@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.GetDataBaseDbContextConfig(builder.Configuration);
 builder.Services.AddRecordRepository();
+builder.Services.AddRecordService();
 
 var app = builder.Build();
 
