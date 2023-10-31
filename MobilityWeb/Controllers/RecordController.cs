@@ -28,7 +28,7 @@ public class RecordController : Controller
         var (Success, Message) = await _recordService.AddRecordAsync(record);
         if (!Success)
         {
-            ModelState.AddModelError("Error", Message);
+            ViewBag.ErrorMessage = Message;
             return View(record);
         }
         return RedirectToAction(nameof(List));
@@ -47,9 +47,10 @@ public class RecordController : Controller
         var (Success, Message) = await _recordService.DeleteRecordAsync(name);
         if (!Success)
         {
-            ModelState.AddModelError("Error", Message);
+            ViewBag.ErrorMessage = Message;
             return View();
         }
-        return RedirectToAction(nameof(List));
+        ViewBag.SuccessMessage = Message;
+        return View();
     }
 }

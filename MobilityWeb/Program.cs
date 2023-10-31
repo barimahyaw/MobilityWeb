@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.GetDataBaseDbContextConfig(builder.Configuration);
 builder.Services.AddRecordRepository();
 builder.Services.AddRecordService();
+builder.Services.AddHttpClientService(builder.Configuration);
 
 var app = builder.Build();
 

@@ -9,6 +9,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - CONNECTION_STRING=User ID=admin;Password=adminamin;Server=host.docker.internal;Port=5432;Database=Mobility;Integrated Security=true;Pooling=true;
+      - SERVICE_BASE_URL=http://host.docker.internal:7000/
     build:
       context: .
       dockerfile: MobilityWeb/Dockerfile

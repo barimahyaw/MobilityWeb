@@ -18,13 +18,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">                       
+                    @*<ul class="navbar-nav flex-grow-1">                       
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Link Entity</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Record" asp-action="List">Web Service</a>
                         </li>
+                    </ul>*@
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Link Entity
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="Record" asp-action="Add">Record Add</a></li>
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="Record" asp-action="Delete">Record Delete</a></li>
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="Record" asp-action="List">Record List</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Web Service
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="ServiceRecord" asp-action="Add">Record Add</a></li>
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="ServiceRecord" asp-action="Delete">Record Delete</a></li>
+                        <li><a class="dropdown-item" type="button" asp-area="" asp-controller="ServiceRecord" asp-action="List">Record List</a></li>
                     </ul>
                 </div>
             </div>

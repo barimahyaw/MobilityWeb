@@ -26,4 +26,11 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddRecordService(this IServiceCollection services)
         => services.AddScoped<IRecordService, RecordService>();
+
+    public static IServiceCollection AddHttpClientService(this IServiceCollection services, IConfiguration configuration)
+    {
+        var url = Environment.GetEnvironmentVariable("SERVICE_BASE_URL") ?? configuration["Service_BaseUrl"];
+        services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(url!) });
+        return services;
+    }
 }
